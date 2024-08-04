@@ -4,259 +4,83 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Akash Jadhav - Portfolio</title>
+    <!-- <link href="PortFlio/style.css" rel="stylesheet"> -->
+    <link href="css/body.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/user-info.css" rel="stylesheet">
+    <link href="css/Project.css" rel="stylesheet">
+    <link href="css/skillset.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-       
-        body {
-            background: linear-gradient(270deg,black,cyan, #ff5858);
-            background-size: 600% 600%;
-            animation: gradientAnimation 16s ease infinite;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        section {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .user-info, .user-photo, .skillset-section {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .user-info h2, .skillset-section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .user-info p, .skillset-section p {
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
-        .user-photo img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .skillset-section {
-            text-align: center;
-        }
-        .skill-icon-card {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-            margin: 10px;
-            flex: 1 1 calc(33.333% - 20px);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .skill-icon-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .skill-icon-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .skill-icon {
-            width: 80px;
-            height: auto;
-            margin-bottom: 10px;
-            transition: transform 0.3s;
-        }
-        .skill-title {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .skillset-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        @media (max-width: 768px) {
-            .skill-icon-card {
-                flex: 1 1 calc(50% - 20px);
-            }
-        }
-        @media (max-width: 576px) {
-            .skill-icon-card {
-                flex: 1 1 100%;
-            }
-        }
+         
 
-        .container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 50px;
-        }
-
-        .user-info h2, .user-info p {
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
-
-        .user-info h2 {
-            animation-delay: 0.5s;
-        }
-
-        .user-info p:nth-child(2) {
-            animation-delay: 1s;
-        }
-
-        .user-info p:nth-child(3) {
-            animation-delay: 1.5s;
-        }
-
-        .user-info p:nth-child(4) {
-            animation-delay: 2s;
-        }
-
-        .user-info p:nth-child(5) {
-            animation-delay: 2.5s;
-        }
-
-        .user-info p:nth-child(6) {
-            animation-delay: 3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .user-photo img {
-            width: 100%;
-            border-radius: 10px;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
-            100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
-        }
-     
-        .section-title {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 250px;
-            background: linear-gradient(180deg, #000, #1e3c72, #a64d79);
-            padding: 20px;
-            transform: translateX(-250px);
-            transition: transform 0.4s ease;
-            z-index: 1000;
-        }
-
-        .navbar.active {
-            transform: translateX(0);
-        }
-
-        .navbar-brand, .nav-link {
-            color: #fff !important;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        .navbar-toggler {
-            position: absolute;
-            top: 20px;
-            left: 250px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .navbar-toggler-icon {
-            width: 30px;
-            height: 30px;
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-        }
-
-        .navbar-nav {
-            display: flex;
-            flex-direction: column;
-            margin-top: 50px;
-        }
-
-        .nav-item {
-            margin-bottom: 20px;
-        }
-
-    
-        </style>
-        <link href="D:\DevelopMent\Digital_Art_Gallery\nav.css" rel="stylesheet">
   </head>
-  
+
   <body>
-
-    <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <nav class="navbar">
-        <a class="navbar-brand" href="#">Akash Jadhav</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+    <div class="top-nav">
+        <div class="logo">
+          <img src="https://static8.depositphotos.com/1301180/806/v/450/depositphotos_8068892-stock-illustration-alphabet.jpg" alt="Logo">
+          <span>Akash Portfolio</span>
         </div>
-    </nav>
-    
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+  </div>
+           
+  <div class="container">
+    <div class="user-info-section">
+      <div class="user-photo">
+        <img src="https://media.licdn.com/dms/image/D4D03AQEW7emZTmS8Ag/profile-displayphoto-shrink_800_800/0/1686559205491?e=1727913600&v=beta&t=qKimw7u_ibdquvUXgQTX2yamBWHqUKV4SNG9osfror0" alt="User Photo">
+      </div>
+      <div class="user-info">
+        <h2>Akash Jadhav</h2>
+        <ul>
+          <li>Profession: MERN Stack Developer</li>
+          <li>Education: BE in Computer Engineering</li>
+          <li>Achievements: NEXTNICHE Hackathon for Innovation and Business Model</li>
+          <li>Interested in applying to: Altius Technologies</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-    <section>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-6 user-info">
-                    <h2>User Info</h2>
-                    <p>Name: Akash Jadhav</p>
-                    <p>Profession: MERN Stack Developer</p>
-                    <p>Education: BE in Computer Engineering</p>
-                    <p>Achievements: NEXTNICHE Hackathon for Innovation and Business Model</p>
-                    <p>Interested in applying to: Altius Technologies</p>
+  <section id="projects">
+    <div class="projects-container">
+        <h2>Projects</h2>
+        <div class="projects-wrapper">
+            <div class="vertical-line"></div>
+            <div class="projects-list">
+                <div class="project-node left">
+                    <div class="content">
+                        <div class="project-title">Project 1</div>
+                        <div class="project-details">Description of Project 1.</div>
+                    </div>
                 </div>
-                <div class="col-md-6 user-photo">
-                    <img src="https://media.licdn.com/dms/image/D4D03AQEW7emZTmS8Ag/profile-displayphoto-shrink_800_800/0/1686559205491?e=1727913600&v=beta&t=qKimw7u_ibdquvUXgQTX2yamBWHqUKV4SNG9osfror0" alt="User Photo">
+                <div class="project-node right">
+                    <div class="content">
+                        <div class="project-title">Project 2</div>
+                        <div class="project-details">Description of Project 2.</div>
+                    </div>
                 </div>
+                <div class="project-node left">
+                    <div class="content">
+                        <div class="project-title">Project 3</div>
+                        <div class="project-details">Description of Project 3.</div>
+                    </div>
+                </div>
+                <!-- Add more project nodes as needed -->
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-
-    <section class="skillset-section">
+    <!-- <section class="skillset-section">
         
             
         <div class="container">
@@ -333,9 +157,105 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <section class="skillset-section">
+      <div class="container">
+        <h2>Our Skillset</h2>
+        <p>Here are some of the skills we excel at, represented by icons that can be used as logos in designs.</p>
+        <div class="skillset-grid">
+          <div class="skill-icon-container">
+            <img src="https://fr.w3docs.com/uploads/media/book_gallery/0001/02/849d4286475e04155fd5f21861f16f53db95ac72.png" alt="HTML5" class="skill-icon">
+            <div class="skill-title">HTML5</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://jeffmuter.com/resources/css-logo.png" alt="CSS3" class="skill-icon">
+            <div class="skill-title">CSS3</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://th.bing.com/th/id/OIP.lrMPUKlpBVukVACvbhWD2QHaHZ?w=202&h=201&c=7&r=0&o=5&pid=1.7" alt="JavaScript" class="skill-icon">
+            <div class="skill-title">JavaScript</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://praveenpuglia.gallerycdn.vsassets.io/extensions/praveenpuglia/tailwind-breeze/2.2.6/1602691666511/Microsoft.VisualStudio.Services.Icons.Default" alt="Tailwind CSS" class="skill-icon">
+            <div class="skill-title">Tailwind CSS</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://logospng.org/download/node-js/logo-node-js-512.png" alt="Node.js" class="skill-icon">
+            <div class="skill-title">Node.js</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://www.mementotech.in/assets/images/icons/express.png" alt="Express.js" class="skill-icon">
+            <div class="skill-title">Express.js</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png" alt="MongoDB" class="skill-icon">
+            <div class="skill-title">MongoDB</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL" class="skill-icon">
+            <div class="skill-title">MySQL</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js" class="skill-icon">
+            <div class="skill-title">React.js</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" class="skill-icon">
+            <div class="skill-title">Postman</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C" class="skill-icon">
+            <div class="skill-title">C</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg" alt="C++" class="skill-icon">
+            <div class="skill-title">C++</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java" class="skill-icon">
+            <div class="skill-title">Java</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="skill-icon">
+            <div class="skill-title">Python</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="NumPy" class="skill-icon">
+            <div class="skill-title">NumPy</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" alt="Pandas" class="skill-icon">
+            <div class="skill-title">Pandas</div>
+          </div>
+          <div class="skill-icon-container">
+            <img src="https://asset.brandfetch.io/idbyoKq4tZ/idvwpDn6Co.png" alt="Matplotlib" class="skill-icon">
+            <div class="skill-title">Matplotlib</div>
+          </div>
+        </div>
+      </div>
     </section>
-
-
+    
+    
+    <div class="side-footer">
+      <div class="social-icon">
+        <a href="https://facebook.com" target="_blank">
+          <img src="https://1.bp.blogspot.com/-CnTGBZaanBY/UO9sKnXkBJI/AAAAAAAAEB8/Z5b9Ei0xris/s1600/Facebook+logo.png" alt="Facebook">
+          
+        </a>
+      </div>
+      <div class="social-icon">
+        <a href="https://twitter.com" target="_blank">
+          <img src="https://www.aps.edu/sapr/images/pnglot.comtwitterbirdlogopng139932.png/image" alt="Twitter">
+        </a>
+      </div>
+      <div class="social-icon">
+        <a href="https://linkedin.com" target="_blank">
+          <img src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG8.png" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+    
     
 
     <script>
@@ -351,11 +271,38 @@
             });
         });
         </script>
-        <script>
-            document.querySelector('.navbar-toggler').addEventListener('click', function() {
-                document.querySelector('.navbar').classList.toggle('active');
-            });
+       <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle navigation bar visibility
+            const navToggle = document.getElementById('nav-toggle');
+            const navBar = document.getElementById('nav-bar');
+            const navToggleBurger = document.getElementById('nav-toggle-burger');
+        
+            if (navToggle && navBar && navToggleBurger) {
+                navToggleBurger.addEventListener('click', function() {
+                    navToggle.checked = !navToggle.checked;
+                    navBar.classList.toggle('active', navToggle.checked);
+                });
+            } else {
+                console.warn('Navigation elements not found.');
+            }
+        
+            // Toggle footer content visibility
+            const navFooterToggle = document.getElementById('nav-footer-toggle');
+            const navFooterContent = document.getElementById('nav-footer-content');
+            const navFooterHeading = document.getElementById('nav-footer-heading');
+        
+            if (navFooterToggle && navFooterContent && navFooterHeading) {
+                navFooterHeading.addEventListener('click', function() {
+                    navFooterToggle.checked = !navFooterToggle.checked;
+                    navFooterContent.style.display = navFooterToggle.checked ? 'block' : 'none';
+                });
+            } else {
+                console.warn('Footer elements not found.');
+            }
+        });
         </script>
+        
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>

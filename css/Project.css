@@ -1,0 +1,268 @@
+/* #projects { */
+/* background-color: #222; Dark background for contrast */
+/* background-color:transparent;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+} */
+
+/* .projects-container h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+} */
+
+/* .projects-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+} */
+
+/* .vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: gold;
+  transform: translateX(-50%);
+} */
+
+/* .projects-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+} */
+
+/* .project-node {
+  position: relative;
+  background-color: #333;
+  border: 2px solid gold; /* Golden border */
+/* border-radius: 8px; */
+/* padding: 20px; */
+/* margin: 20px 0; */
+/* width: 300px; Fixed width for consistency */
+/* text-align: center; */
+/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
+/* } */
+
+/* .project-node::before {
+  content: "";
+  position: absolute;
+  left: -20px; /* Adjust based on border width */
+/* top: 50%; */
+/* width: 20px; Width of the connecting line */
+/* height: 2px; Height of the connecting line */
+/* background: gold; Golden connecting line */
+/* transform: translateY(-50%); */
+/* } */
+/* .project-node:first-of-type::before {
+  content: none; /* No line before the first node */
+/* } */
+
+/* .project-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project-details {
+  font-size: 1em;
+  color: #ccc;
+} */
+
+#projects {
+  background-color: transparent;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.projects-container h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: gold; /* Added golden color for the header */
+}
+
+.projects-wrapper {
+  position: relative;
+}
+
+.projects-list {
+  position: relative;
+  padding: 10px 0;
+}
+
+.project-node {
+  position: relative;
+  width: 45%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+
+.project-node.left {
+  left: 0;
+  margin-left: 0;
+  text-align: right;
+}
+
+.project-node.right {
+  left: 55%;
+  margin-left: 0;
+  text-align: left;
+}
+
+.project-node::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px; /* Width of the connecting line */
+  height: 2px;
+  background: gold;
+  z-index: -1;
+}
+
+.project-node.left::before {
+  right: -20px;
+}
+
+.project-node.right::before {
+  left: -20px;
+}
+
+.project-node .content {
+  background-color: #333;
+  border: 2px solid gold;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.project-node:hover .content {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.project-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: gold; /* Golden color for the title */
+}
+
+.project-details {
+  font-size: 1em;
+  color: #ccc;
+  margin: 0;
+}
+
+.vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, gold, transparent);
+  z-index: -1;
+  animation: vertical-line-animation 2s infinite linear;
+  background-size: 200% 200%;
+}
+
+@keyframes vertical-line-animation {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 0% 100%;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .project-node {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  .project-node.left,
+  .project-node.right {
+    left: 0;
+    text-align: center;
+  }
+
+  .project-node::before {
+    width: 2px; /* Change the connecting line to a dot */
+    height: 20px;
+    top: -20px; /* Position the dot above the node */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container h2 {
+    font-size: 2em;
+  }
+
+  .project-title {
+    font-size: 1.25em;
+  }
+
+  .project-details {
+    font-size: 0.9em;
+  }
+
+  .vertical-line {
+    left: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container h2 {
+    font-size: 1.75em;
+  }
+
+  .project-title {
+    font-size: 1.1em;
+  }
+
+  .project-details {
+    font-size: 0.8em;
+  }
+
+  .project-node {
+    padding: 15px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  .project-node.left,
+  .project-node.right {
+    left: 0;
+  }
+
+  .project-node::before {
+    display: none;
+  }
+
+  .vertical-line {
+    left: 50%;
+  }
+}
