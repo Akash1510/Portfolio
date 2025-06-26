@@ -35,42 +35,39 @@ const Experience = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[#D2D0A0] py-10">
+    <div className="flex flex-col items-center bg-[#D2D0A0] py-10 w-full overflow-x-hidden px-2 sm:px-4 md:px-6">
       {/* Timeline divider */}
-      <div className="w-1 bg-green-700 h-35 rounded-full mb-5"></div>
+      <div className="w-1 bg-green-700 h-10 sm:h-20 md:h-32 lg:h-35 rounded-full mb-5" />
 
       {/* Experience Heading */}
-      <h1 className="text-5xl font-extrabold  text-[#537d5d] text-shadow-lg/30  mb-10">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#537d5d] text-shadow-lg/30 mb-10 text-center">
         EXPERIENCE
       </h1>
 
       {/* Experience Cards */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 max-w-6xl w-full">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 p-3 sm:p-5 max-w-6xl w-full">
         {experiences.map((item, index) => (
           <div
             key={index}
-            className="bg-[#537d5d] rounded-lg p-6 shadow-md text-[#D2D0A0]"
-          
+            className="bg-[#537d5d] rounded-lg p-4 sm:p-6 shadow-md text-[#D2D0A0]"
           >
-            <h2 className="text-3xl font-bold">{item.title}</h2>
-            <p className="text-lg mt-1">{item.organization}</p>
-            <p className="text-md mb-2">{item.duration}</p>
-            <p className="font-semibold">Learnings:</p>
-            <ul className="list-disc list-inside pl-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{item.title}</h2>
+            <p className="text-md sm:text-lg mt-1">{item.organization}</p>
+            <p className="text-sm sm:text-md mb-2">{item.duration}</p>
+            <p className="font-semibold text-sm sm:text-base">Learnings:</p>
+            <ul className="list-disc list-inside pl-4 text-sm sm:text-base">
               {item.description.map((point, i) => (
                 <li key={i}>{point}</li>
               ))}
             </ul>
 
-            {/* render Links Now */}
-
             {item.title.includes("UST D3Code Hackathon") && (
-              <ul className="list-disc list-inside pl-5 pt-2">
+              <ul className="list-disc list-inside pl-4 pt-2 text-sm sm:text-base">
                 <p className="font-semibold">Links:</p>
                 {Object.entries(links).map(([content, path]) => (
                   <li key={path}>
                     <Link
-                      className="underline text-blue-950 font-semibold"
+                      className="underline text-blue-950 font-semibold break-all"
                       rel="noopener noreferrer"
                       to={path}
                       target="_blank"
@@ -86,52 +83,52 @@ const Experience = () => {
       </section>
 
       {/* Divider */}
-      <div className="w-1 bg-green-700 h-20 rounded-full my-10"></div>
+      <div className="w-1 bg-green-700 h-10 sm:h-20 md:h-32 lg:h-35 rounded-full my-10" />
 
-      {/* Education Section (Placeholder) */}
-      <h1 className="text-5xl font-extrabold text-shadow-lg/30  text-[#537d5d] mb-10">
+      {/* Education Section */}
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#537d5d] text-shadow-lg/30 mb-10 text-center">
         EDUCATION
       </h1>
 
-      {/* You should create a separate education array here if needed */}
-      {/* Example below can be replaced with actual education data */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 max-w-6xl w-full">
-        <div className="bg-[#537d5d] rounded-lg p-6 shadow-lg text-[#D2D0A0]">
-          <h2 className="text-3xl font-bold">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 p-3 sm:p-5 max-w-6xl w-full">
+        <div className="bg-[#537d5d] rounded-lg p-4 sm:p-6 shadow-lg text-[#D2D0A0]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
             Bachelor of Computer Engineering
           </h2>
-          <p className="text-lg mt-1">JSPM's BSIOTR,WAGHOLI PUNE</p>
-          <p className="text-lg mt-1">
-            Under Savitribai Phule Pune University,Pune
+          <p className="text-md sm:text-lg mt-1">JSPM's BSIOTR, WAGHOLI PUNE</p>
+          <p className="text-sm sm:text-md mt-1">
+            Under Savitribai Phule Pune University, Pune
           </p>
-
-          <p className="text-md mb-2">2022 - 2026</p>
-          <p className="font-semibold">Focus Areas:</p>
-          <ul className="list-disc list-inside pl-4">
+          <p className="text-sm sm:text-md mb-2">2022 - 2026</p>
+          <p className="font-semibold text-sm sm:text-base">Focus Areas:</p>
+          <ul className="list-disc list-inside pl-4 text-sm sm:text-base">
             <li>Data Structures And Algorithms</li>
             <li>Web Development & DataBase Management System</li>
             <li>Artificial Intelligence And Data Science</li>
-            <li> Operating System & Computer Networks</li>
+            <li>Operating System & Computer Networks</li>
           </ul>
         </div>
-        <div className="bg-[#537d5d] rounded-lg p-6 shadow-lg text-[#D2D0A0]">
-          <h2 className="text-3xl font-bold">
-            Higher Secondary Certificate Edcucation & SSC
+
+        <div className="bg-[#537d5d] rounded-lg p-4 sm:p-6 shadow-lg text-[#D2D0A0]">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
+            Higher Secondary Certificate Education & SSC
           </h2>
-          <p className="text-lg mt-1">Amrita Vidyalayam,Pune</p>
-          <p className="text-md mb-2">2019 - 2021 - 84.17% </p>
-          <p className="text-lg mt-1">Subodh Vidyalaya,Pune</p>
-          <p className="text-md mb-2">2018 - 2019 - 91.40% </p>
-          <p className="font-semibold">Focus Areas:</p>
-          <ul className="list-disc list-inside pl-4">
+          <p className="text-md sm:text-lg mt-1">Amrita Vidyalayam, Pune</p>
+          <p className="text-sm sm:text-md mb-2">2019 - 2021 - 84.17% </p>
+          <p className="text-md sm:text-lg mt-1">Subodh Vidyalaya, Pune</p>
+          <p className="text-sm sm:text-md mb-2">2018 - 2019 - 91.40% </p>
+          <p className="font-semibold text-sm sm:text-base">Focus Areas:</p>
+          <ul className="list-disc list-inside pl-4 text-sm sm:text-base">
             <li>Physics</li>
-            <li>Chemsitry</li>
-            <li>MathMatics (Algebra & Statistics & Integrals)</li>
+            <li>Chemistry</li>
+            <li>Mathematics (Algebra, Statistics & Integrals)</li>
             <li>Information Technology</li>
           </ul>
         </div>
       </section>
-      <div className="w-1 bg-green-700 h-35 rounded-full mb-5"></div>
+
+      {/* Bottom divider */}
+      <div className="w-1 bg-green-700 h-10 sm:h-20 md:h-32 lg:h-35 rounded-full mt-10" />
     </div>
   );
 };

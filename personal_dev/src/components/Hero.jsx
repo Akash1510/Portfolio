@@ -1,21 +1,22 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <>
-      {/* My aim To create the left side information and right side images */}
-
-      {/* Left side section with Information*/}
-      <div className="flex flex-row justify-between items-center bg-[#D2D0A0] p-10 space-x-8  shadow-2">
-        <div className="p-15 my-9 mx-2 flex flex-col justify-between items-start space-y-10">
-          <div className="  p-5  space-y-10 ">
-            <h1 className="font-extrabold font-serif text-5xl text-green-900 text-start text-shadow-lg/30">
+      {/* Main container responsive: column on mobile, row on larger screens */}
+      <div className="flex flex-col md:flex-row justify-between items-center bg-[#D2D0A0] px-6 sm:px-10 py-10 space-y-10 md:space-y-0 md:space-x-8 shadow-2">
+        
+        {/* Left section: text + button */}
+        <div className="flex flex-col space-y-8 md:space-y-10 text-start w-full md:w-1/2 px-2">
+          <div className="space-y-6">
+            <h1 className="font-extrabold font-serif text-3xl sm:text-4xl md:text-5xl text-green-900 text-shadow-lg/30">
               Hi, I Am Akash
             </h1>
 
-            <p className="text-2xl font-serif font-semibold text-[#144d21] overflow-hidden w-full text-shadow-lg/30">
-              Skilled In {""}
+            <p className="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-[#144d21] text-shadow-lg/30">
+              Skilled In{" "}
               <Typewriter
                 words={[
                   "Full Stack Development 💻",
@@ -33,12 +34,13 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="mx-6">
+          {/* Download CV Button */}
+          <div>
             <button
               type="submit"
-              className=" flex items-center justify-between text-sm h-10 w-39 rounded-full pr-7 bg-[##D2D0A0] border-2 border-emerald-900 text-green-900 font-bold active:scale-95 transition hover:bg-green-900 hover:text-white object-cover"
+              className="flex items-center justify-between h-10 w-fit rounded-full pr-4 bg-[#D2D0A0] border-2 border-emerald-900 text-green-900 font-bold active:scale-95 transition hover:bg-green-900 hover:text-white"
             >
-              <div className="bg-green-900 ml-1 rounded-full h-7 w-7  flex items-center justify-center">
+              <div className="bg-green-900 ml-1 rounded-full h-7 w-7 flex items-center justify-center">
                 <svg
                   width="14"
                   height="15"
@@ -55,26 +57,23 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <Link to="assets\Akash_Jadhav_CV.pdf" target="_blank">
+              <Link
+                href="/assets/Akash_Jadhav_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-sm sm:text-base"
+              >
                 Download CV
               </Link>
             </button>
           </div>
         </div>
 
-        {/* <div className="mx-15 my-8">
-          <div className="box-content md:border-8 border-emerald-700 overflow-hidden   rounded-full  shadow-2xl ">
+        {/* Right section: image box remains untouched except for spacing */}
+        <div className="mx-2 md:mx-10 my-8 shadow-2xl bg-[#537D5D] rounded-lg p-5 w-full md:w-auto">
+          <div className="box-content md:border-40 rotate-12 border-transparent bg-transparent overflow-hidden rounded-lg shadow-2xl">
             <img
-              className="object-cover"
-              src="/src/assets/personal.png"
-              alt="Akash Jadhav"
-            />
-          </div>
-        </div> */}
-        <div className="mx-15 my-8  shadow-2xl  bg-[#537D5D] rounded-lg  p-5  ">
-          <div className="box-content md:border-40 rotate-12 border-transparent bg-transparent overflow-hidden   rounded-lg  shadow-2xl ">
-            <img
-              className="object-cover bg-[#D2D0A0] saturate-150 rounded-lg "
+              className="object-cover bg-[#D2D0A0] saturate-150 rounded-lg w-full max-w-xs sm:max-w-sm md:max-w-md"
               src="/assets/personal.png"
               alt="Akash Jadhav"
             />

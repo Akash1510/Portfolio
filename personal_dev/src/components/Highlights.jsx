@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 const Highlights = () => {
-
-
   const data = {
     "Story": `From aspiring to serve the nation through the armed forces to becoming a finalist in national-level hackathons, my path has been anything but ordinary. After three unsuccessful NDA attempts and a setback in the Assam Rifles Bharti, I found myself at a crossroads—armed only with a love for mathematics and the determination to rebuild.
 
@@ -14,55 +12,11 @@ Now in my final year of Computer Engineering, I look back not with regret, but w
   }
 
   const Images = [
-    "1.jpeg",
-    "2.JPG",
-    "3.jpeg",
-    "4.jpeg",
-    "7.JPG",
-    "14.JPG",
-    "5.jpeg",
-    "6.JPG",
-    "8.JPG",
-    "9.jpeg",
-    "10.jpeg",
-    "11.JPG",
-    "12.JPG",
-    "13.JPG",
-    "15.JPG",
-
+    "1.jpeg", "2.JPG", "3.jpeg", "4.jpeg", "7.JPG", "14.JPG",
+    "5.jpeg", "6.JPG", "8.JPG", "9.jpeg", "10.jpeg", "11.JPG",
+    "12.JPG", "13.JPG", "15.JPG",
   ];
 
-
-  // const ScrollEvent = useRef(null);
-  // const [Ishoverd, SetIsHoverd] = useState(false);
-
-  // useEffect(() => {
-  //   const ScrollBox = ScrollEvent.current;
-  //   let ScrollInterval;
-
-  //   const StartScrolling = () => {
-  //     ScrollInterval = setInterval(() => {
-
-  //       if (!Ishoverd && ScrollBox) {
-  //         ScrollBox.scrollLeft += 1;
-
-  //         if (ScrollBox.scrollLeft + ScrollBox.ClientWidth >= ScrollBox.scrollWidth) {
-  //           ScrollBox.scrollLeft = 0;
-  //         }
-
-  //       }
-  //     }, 20)
-  //   };
-
-    
-  //     StartScrolling()
-     
-
-  //   return () => clearInterval(ScrollInterval);
-  // }, [Ishoverd])
-
-
-  // Infinite Scroll
   const ScrollEvent = useRef(null);
   const [isHovered, SetIsHoverd] = useState(false);
 
@@ -74,8 +28,6 @@ Now in my final year of Computer Engineering, I look back not with regret, but w
       scrollInterval = setInterval(() => {
         if (!isHovered && scrollBox) {
           scrollBox.scrollLeft += 1;
-
-          // Reset scroll when half the scroll width is reached
           if (scrollBox.scrollLeft >= scrollBox.scrollWidth / 2) {
             scrollBox.scrollLeft = 0;
           }
@@ -84,58 +36,51 @@ Now in my final year of Computer Engineering, I look back not with regret, but w
     };
 
     startScroll();
-
     return () => clearInterval(scrollInterval);
   }, [isHovered]);
 
-
-
-
-
   return (
     <>
-      <div className='w-full h-250 bg-[#D2D0A0]'>
+      <div className="w-full bg-[#D2D0A0] py-20">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#537D59] text-shadow-lg/30 text-center mb-10 select-none">
+          HIGHLIGHTS
+        </h1>
 
-        <h1 className='text-5xl font-extrabold text-[#537D59] text-shadow-lg/30 text-center p-10 mb-25 select-none'>HIGHLIGHTS</h1>
-
-        {/*section 1 for the Insperational  Story  */}
-        <div className=' w-full h-140 p-20  flex flex-row justify-between items-center space-x-4'>
-
-          <section className='  w-1/2 h-full space-y-7 mt-20 '>
-            <h1 className='text-green-700 font-extrabold font-mono text-4xl mx-auto mt-20  text-shadow-lg/50 select-none'>MY JOURNEY</h1>
-            <p className='text-sm font-mono font-bold whitespace-wrap bg-fixed select-none'>{data.Story}</p>
+        {/* Main container: Responsive layout */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-10 px-4 md:px-10">
+          
+          {/* Journey Text */}
+          <section className="w-full lg:w-1/2 space-y-6 mt-6">
+            <h1 className="text-2xl sm:text-3xl text-green-700 font-extrabold font-mono text-center lg:text-left select-none">
+              MY JOURNEY
+            </h1>
+            <p className="text-xs sm:text-sm md:text-base font-mono font-bold whitespace-wrap select-none text-justify">
+              {data.Story}
+            </p>
           </section>
 
-
-
-          {/* Section 2 -- Highlights images of my college journey */}
-          <section className="w-1/2 h-160 mx-auto mt-12 p-6 bg-[#537D59]">
-
-            <div ref={ScrollEvent}
+          {/* Image Marquee */}
+          <section className="w-full lg:w-1/2 mt-6 p-4 bg-[#537D59]">
+            <div
+              ref={ScrollEvent}
               onMouseEnter={() => SetIsHoverd(true)}
               onMouseLeave={() => SetIsHoverd(false)}
-              className=" border-40 flex space-x-9 overflow-hidden  p-7 mt-15 bg-[#D2D0A0] saturate-150 ">
-              {[...Images,...Images].map((img, index) => (
+              className="flex space-x-5 overflow-hidden p-5 bg-[#D2D0A0] saturate-150 border-20  rounded-md"
+            >
+              {[...Images, ...Images].map((img, index) => (
                 <img
                   key={index}
-
                   src={`assets/LightImages/${img}`}
                   alt={`Highlight ${index + 1}`}
-                  className=" h-90 w-auto  object-cover shadow-md hover:scale-105 transition-transform duration-300 flex-shrink-0"
+                  className="h-40 sm:h-52 md:h-60 object-cover shadow-md hover:scale-105 transition-transform duration-300 flex-shrink-0 border-2 border-[#537D59] rounded-md"
                 />
               ))}
             </div>
           </section>
-
-
-
         </div>
-
-
-
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Highlights
+export default Highlights;
