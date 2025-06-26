@@ -10,6 +10,7 @@ import {
 import { BiLogoFlask } from "react-icons/bi";
 import { FaFlutter } from "react-icons/fa6";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Project = () => {
   const [Seemore, SetSeemore] = useState(false);
@@ -43,6 +44,7 @@ const Project = () => {
         BiLogoFlask: "black",
         FaDatabase: "red",
       },
+      link:"https://drive.google.com/file/d/1fG_DY08oEQFGIycjJtdS847u2Y-Lly5b"
     },
     {
       title: "EduMitra",
@@ -59,6 +61,7 @@ const Project = () => {
         FaJs: "yellow",
         FaNodeJs: "yellowgreen",
       },
+      link:"https://parental-engagement.vercel.app/"
     },
   ];
 
@@ -120,7 +123,9 @@ const Project = () => {
                 type="button"
                 className="text-amber-300 flex flex-row items-center rounded-full px-4 py-2 cursor-pointer font-bold border-2"
               >
-                View Project
+                <Link to={item.link} target="_blank">
+                View Project 
+                </Link>
                 <FaArrowRight className="ml-2 mt-0.5" />
               </button>
             </div>

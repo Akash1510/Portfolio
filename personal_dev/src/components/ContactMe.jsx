@@ -98,7 +98,7 @@ const ContactMe = () => {
 
       <footer className="mt-16 text-center text-sm text-white font-bold font-mono">
         <p>
-          © {new Date().getFullYear()} Akash Jadhav. Made By Akash Jadhav
+          © {new Date().getFullYear()} Akash Jadhav. 
         </p>
       </footer>
     </div>
