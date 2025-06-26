@@ -11,7 +11,7 @@ const skillspath = {
   MongoDB: "/assets/MongoDB.png",
   Dart: "/assets/Dart.png",
   React: "/assets/React.png",
-  TailwindCSS: "/assets/Tailwind CSS.png",
+  Tailwind: "/assets/Tailwind CSS.png",
   Streamlit: "/assets/Streamlit.png",
   NodeJS: "/assets/Node.js.png",
   ExpressJS: "/assets/Express.png",
