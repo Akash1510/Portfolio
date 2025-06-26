@@ -5,16 +5,16 @@ const Social = () => {
   const Social_data = [
     {
       link: "https://www.linkedin.com/in/akash-jadhav-5b8236259/",
-      path: "src/assets/linkdin.png",
+      path: "/assets/linkdin.png",
     },
     {
       link: "https://leetcode.com/u/Akash_Jadhav2003/",
-      path: "src/assets/Leetcode.png",
+      path: "/assets/Leetcode.png",
     },
     {
       link: "https://github.com/Akash1510/",
 
-      path: "src/assets/github.png",
+      path: "/assets/GitHub.png",
     },
   ];
 

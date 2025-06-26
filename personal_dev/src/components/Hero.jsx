@@ -55,7 +55,7 @@ const Hero = () => {
                   />
                 </svg>
               </div>
-              <Link to="src\assets\Akash_Jadhav_CV.pdf" target="_blank">
+              <Link to="assets\Akash_Jadhav_CV.pdf" target="_blank">
                 Download CV
               </Link>
             </button>
@@ -75,7 +75,7 @@ const Hero = () => {
           <div className="box-content md:border-40 rotate-12 border-transparent bg-transparent overflow-hidden   rounded-lg  shadow-2xl ">
             <img
               className="object-cover bg-[#D2D0A0] saturate-150 rounded-lg "
-              src="\src\assets\personal.png"
+              src="/assets/personal.png"
               alt="Akash Jadhav"
             />
           </div>

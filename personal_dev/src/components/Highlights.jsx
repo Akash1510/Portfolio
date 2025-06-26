@@ -15,20 +15,20 @@ Now in my final year of Computer Engineering, I look back not with regret, but w
 
   const Images = [
     "1.jpeg",
-    "2.jpg",
+    "2.JPG",
     "3.jpeg",
     "4.jpeg",
-    "7.jpg",
-    "14.jpg",
+    "7.JPG",
+    "14.JPG",
     "5.jpeg",
-    "6.jpg",
-    "8.jpg",
+    "6.JPG",
+    "8.JPG",
     "9.jpeg",
     "10.jpeg",
-    "11.jpg",
-    "12.jpg",
-    "13.jpg",
-    "15.jpg",
+    "11.JPG",
+    "12.JPG",
+    "13.JPG",
+    "15.JPG",
 
   ];
 
@@ -119,7 +119,7 @@ Now in my final year of Computer Engineering, I look back not with regret, but w
                 <img
                   key={index}
 
-                  src={`src/assets/LightImages/${img}`}
+                  src={`assets/LightImages/${img}`}
                   alt={`Highlight ${index + 1}`}
                   className=" h-90 w-auto  object-cover shadow-md hover:scale-105 transition-transform duration-300 flex-shrink-0"
                 />

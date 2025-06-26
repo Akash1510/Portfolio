@@ -30,7 +30,7 @@ const Project = () => {
   const ProjectData = [
     {
       title: "AgroAI",
-      imgPath: "src/assets/AgroAiimg.jpeg",
+      imgPath: "/assets/AgroAiimg.jpeg",
       description: [
         "Agro AI is Mobile Application that helps farmers to get real time Information about their crops affceted from any Diesease for improve their informed Decision Making.",
 
@@ -51,7 +51,7 @@ const Project = () => {
     },
     {
       title: "EduMitra",
-      imgPath: "src/assets/Edumitra.png", // Replace with actual image path D:\Porfolio\personal_dev\src\assets\Edumitra.png
+      imgPath: "/assets/Edumitra.png", // Replace with actual image path D:\Porfolio\personal_dev\src\assets\Edumitra.png
       description: [
         "EduMitra is a web-based Parental Engagement System designed to bridge communication gaps between teachers and parents for enhanced student outcomes.",
 
