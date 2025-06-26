@@ -58,7 +58,7 @@ const Hero = () => {
                 </svg>
               </div>
               <Link
-                href="/assets/Akash_Jadhav_CV.pdf"
+                to="https://drive.google.com/file/d/1qmYdT6Kdl0MplkWXi668POWZvV3pUGRc/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2 text-sm sm:text-base"
